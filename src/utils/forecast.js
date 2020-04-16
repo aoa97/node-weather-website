@@ -7,7 +7,7 @@ const forecast = (lati, longi, callback) => {
             if (data.error) {
                 callback(undefined, "Unable to find location!")
             } else {
-                callback(`${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees`, undefined)
+                callback(`${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees - Humadity: ${data.current.humidity} - Wind Speed: ${data.current.wind_speed}`, undefined)
             }
         })
         .catch(() => callback(undefined, "Unable to connect to forecast service!"))
